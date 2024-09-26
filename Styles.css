@@ -1,0 +1,353 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', "Times New Roman", sans-serif;
+    scroll-behavior: smooth;
+}
+
+section {
+    padding: 50px 20px;
+    text-align: center;
+}
+
+h2 {
+    color: #ff6f00; /* Orange */
+}
+
+/* Navbar */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #002366; /* Blue */
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.navbar.scrolled {
+    background-color: #ff6f00; /* Orange when scrolled */
+}
+
+.navbar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 20px;
+}
+
+.navbar ul li {
+    display: inline;
+}
+
+.navbar ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+    transition: background 0.3s;
+}
+
+.navbar ul li a:hover {
+    background-color: #ff6f00; /* Orange on hover */
+    border-radius: 5px;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+/* Home Section */
+#home {
+    height: 100vh;
+    background:url(./Assets/rainbow\ kids.jpg);
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#home img {
+    max-width: 100%;
+    height: auto;
+    margin-top: 20px;
+}
+
+.home-content h1 {
+    font-size: 36px;
+    color: #002366;
+}
+
+.home-content p {
+    font-size: 20px;
+    color: #333;
+}
+
+/* About Section */
+#about {
+    background-color: #fff;
+}
+
+#about img {
+    max-width: 50%;
+    margin-top: 20px;
+}
+
+/* Team Section */
+#team {
+    background-color: #f2f2f2;
+}
+
+.team-slider {
+    display: flex;
+    overflow-x: auto;
+    gap: 20px;
+    padding: 20px;
+    scroll-snap-type: x mandatory;
+}
+
+.team-card {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    min-width: 200px;
+    scroll-snap-align: start;
+    transition: transform 0.3s ease-in-out;
+}
+
+.team-card:hover {
+    transform: scale(1.1);
+}
+
+.team-card img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+.team-card h3 {
+    margin: 0;
+    color: #002366;
+}
+
+.team-card p {
+    color: #ff6f00;
+}
+
+/* Events Section */
+#events ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+#events ul li {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+/* Sponsors Section */
+#sponsors {
+    background-color: #f9f9f9;
+    padding: 50px 20px;
+    text-align: center;
+}
+
+#sponsors h2 {
+    color: #ff6f00; /* Orange */
+}
+
+#sponsors p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    color: #333;
+}
+
+/* Sponsors Grid */
+.sponsors-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 30px;
+    align-items: center;
+    justify-content: center;
+}
+
+.sponsor-item {
+    transition: transform 0.3s ease;
+}
+
+.sponsor-item img {
+    width: 100%;
+    max-width: 150px;
+    filter: grayscale(100%);
+    transition: filter 0.3s ease-in-out, transform 0.3s ease;
+}
+
+.sponsor-item:hover img {
+    filter: none; /* Remove grayscale on hover */
+    transform: scale(1.1); /* Slightly enlarge on hover */
+}
+
+
+/* Contact Section */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+form input, form textarea, form button {
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+form button {
+    background-color: #002366;
+    color: white;
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: #ff6f00;
+}
+
+/* Join Club Section */
+#join {
+    background-color: #e6f7ff;
+    padding: 50px;
+}
+
+form: scale(1.05);
+}
+
+/* Slideshow Section */
+.slideshow-container {
+    position: relative;
+    max-width: 100%;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.slideshow-container img {
+    width: 80%;
+    height: 89vh;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.slide {
+    display: none;
+    position: relative;
+}
+
+.active {
+    display: block;
+}
+
+/* Dots for slideshow */
+.slideshow-dots {
+    text-align: center;
+    padding: 10px 0;
+}
+
+.dot {
+    height: 15px;
+    width: 15px;
+    margin: 0 5px;
+    background-color: #ccc;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+
+.active-dot {
+    background-color: #ff6f00;
+}
+
+/* Animations */
+.fade {
+    animation-name: fadeEffect;
+    animation-duration: 1s;
+}
+
+@keyframes fadeEffect {
+    from {opacity: 0.4}
+    to {opacity: 1}
+}
+
+
+/* Footer */
+footer {
+    background-color: #002366;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.social-icons img {
+    width: 24px;
+    height: 24px;
+    margin: 0 10px;
+}
+
+.social-icons a:hover img {
+    opacity: 0.7;
+}
+
+/* Back to Top Button */
+#back-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #002366;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    display: none;
+    z-index: 1000;
+    transition: opacity 0.3s ease-in-out;
+}
+
+#back-to-top:hover {
+    background-color: #ff6f00;
+}
+
+/* Animations */
+.animate-fade {
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.animate-slide-up {
+    opacity: 0;
+    transform: translateY(100px);
+    transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+}
+
+/* Animation Active State */
+.animate-active {
+    opacity: 1;
+    transform: translateY(0);
+}
